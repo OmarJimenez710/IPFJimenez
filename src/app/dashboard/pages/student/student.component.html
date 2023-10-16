@@ -1,0 +1,13 @@
+<app-student-table
+    [dataSource]="student"
+    (deleteStudent)="deleteStudent($event)" 
+    (editStudent)="editStudent($event)"
+    >
+</app-student-table>
+
+<button 
+    mat-fab color="primary" 
+    class="add-btn"
+    (click)="addStudent()">
+    <mat-icon>person_add</mat-icon>
+</button>

@@ -1,0 +1,41 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span *ngIf="!student">My App</span>
+    <span *ngIf="student">Alumnos</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon">
+      <mat-icon>share</mat-icon>
+    </button>
+</mat-toolbar>
+  
+<mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+      <button 
+        mat-raised-button
+        style="display: block;" 
+        class="mb-3"
+        color="primary"
+        (click)="openSectionStudent()">
+        <mat-icon>school</mat-icon>
+        Alumnos
+      </button>
+      <button mat-raised-button style="display: block;" class="mb-3" color="primary">
+        <mat-icon>co_present</mat-icon>
+        Clases
+      </button>
+      <button mat-raised-button style="display: block;" class="mb-3" color="primary">
+        <mat-icon>book</mat-icon>
+        Cursos
+      </button>
+    </mat-drawer>
+  
+    <div>
+        <app-student *ngIf="student"></app-student>
+    </div>
+</mat-drawer-container>
+  
