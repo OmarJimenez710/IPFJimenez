@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IStudent } from './models';
 import { MatDialog } from '@angular/material/dialog';
 import { StudentDialogComponent } from './components/student-dialog/student-dialog.component';
+import { NotificationService } from '../../services/notification.service';
 
 @Component({
   selector: 'app-student',
@@ -43,7 +44,8 @@ export class StudentComponent {
   ];
 
   constructor(
-    private matDialog : MatDialog
+    private matDialog : MatDialog,
+    private notifier: NotificationService
   ){}
 
   addStudent() : void {
@@ -58,6 +60,7 @@ export class StudentComponent {
                 id : this.student[this.student.length - 1].id + 1
               }
             ]
+            this.notifier.sucessNotification("Dado de alta","Registro dado de alta correctamente", 'success');
           }
         }
     }
@@ -75,12 +78,22 @@ export class StudentComponent {
             {...oldDataStudent,...dataStudent} 
             : oldDataStudent
           );
+          this.notifier.sucessNotification("Editado","Registro editado correctamente",'success');
         }
       }
     })
   }
 
   deleteStudent(idStudent : number) : void {
-    this.student = this.student.filter((realData) => realData.id !== idStudent);
+    this.notifier.questionNotification(
+      "¿Está seguro de eliminar?",
+      "Al eliminar el registro se borraran todo sus datos permanentemente",
+      "question"
+    ).then((response)=>{
+      if(response.isConfirmed){
+        this.student = this.student.filter((realData) => realData.id !== idStudent);
+        this.notifier.sucessNotification("Eliminado", "Registro Eliminado Correctamente", "success");
+      }
+    })
   }
 }
