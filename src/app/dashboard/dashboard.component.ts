@@ -15,4 +15,10 @@ export class DashboardComponent {
     this.classRoom = false;
     this.course = false;
   }
+
+  openSectionCourse() : void { 
+    this.student = false;
+    this.classRoom = false;
+    this.course = true;
+  }
 }

@@ -28,7 +28,7 @@
         <mat-icon>co_present</mat-icon>
         Clases
       </button>
-      <button mat-raised-button style="display: block;" class="mb-3" color="primary">
+      <button mat-raised-button style="display: block;" class="mb-3" color="primary" (click)="openSectionCourse()">
         <mat-icon>book</mat-icon>
         Cursos
       </button>
@@ -36,6 +36,7 @@
   
     <div>
         <app-student *ngIf="student"></app-student>
+        <app-course *ngIf="course"></app-course>
     </div>
 </mat-drawer-container>
   
