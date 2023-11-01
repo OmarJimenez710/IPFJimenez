@@ -4,6 +4,7 @@ import { StudentComponent } from './student.component';
 import { StudentTableComponent } from './components/student-table/student-table.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { StudentDialogComponent } from './components/student-dialog/student-dialog.component';
+import { StudentDetailComponent } from './components/student-detail/student-detail.component';
 
 
 
@@ -11,7 +12,8 @@ import { StudentDialogComponent } from './components/student-dialog/student-dial
   declarations: [
     StudentComponent,
     StudentTableComponent,
-    StudentDialogComponent
+    StudentDialogComponent,
+    StudentDetailComponent
   ],
   imports: [
     CommonModule,

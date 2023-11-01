@@ -6,10 +6,12 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav'; 
 import { StudentModule } from './pages/student/student.module';
 import { CourseModule } from './pages/course/course.module';
+import { SidenavComponent } from './components/sidenav/sidenav.component';
 
 @NgModule({
   declarations: [
     DashboardComponent,
+    SidenavComponent,
   ],
   imports: [
     CommonModule,

@@ -10,7 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormErrorsPipe } from './pipes/form-errors.pipe';
 import { TextPluginsPipe } from './pipes/text-plugins.pipe';
 import { MatCardModule } from '@angular/material/card';
-
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -30,7 +30,8 @@ import { MatCardModule } from '@angular/material/card';
     ReactiveFormsModule,
     FormErrorsPipe,
     TextPluginsPipe,
-    MatCardModule
+    MatCardModule,
+    RouterModule
   ]
 })
 export class SharedModule { }

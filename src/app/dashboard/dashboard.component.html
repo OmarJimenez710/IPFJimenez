@@ -14,29 +14,12 @@
 </mat-toolbar>
   
 <mat-drawer-container class="example-container" autosize>
-    <mat-drawer #drawer class="example-sidenav" mode="side">
-      <button 
-        mat-raised-button
-        style="display: block;" 
-        class="mb-3"
-        color="primary"
-        (click)="openSectionStudent()">
-        <mat-icon>school</mat-icon>
-        Alumnos
-      </button>
-      <button mat-raised-button style="display: block;" class="mb-3" color="primary">
-        <mat-icon>co_present</mat-icon>
-        Clases
-      </button>
-      <button mat-raised-button style="display: block;" class="mb-3" color="primary" (click)="openSectionCourse()">
-        <mat-icon>book</mat-icon>
-        Cursos
-      </button>
+    <mat-drawer #drawer mode="side">
+      <app-sidenav></app-sidenav>
     </mat-drawer>
-  
+    
     <div>
-        <app-student *ngIf="student"></app-student>
-        <app-course *ngIf="course"></app-course>
+      <router-outlet></router-outlet>
     </div>
 </mat-drawer-container>
   

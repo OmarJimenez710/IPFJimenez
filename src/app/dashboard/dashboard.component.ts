@@ -7,18 +7,4 @@ import { Component } from '@angular/core';
 })
 export class DashboardComponent {
   student : boolean = false;
-  classRoom : boolean = false;
-  course : boolean = false;
-
-  openSectionStudent() : void { 
-    this.student = true;
-    this.classRoom = false;
-    this.course = false;
-  }
-
-  openSectionCourse() : void { 
-    this.student = false;
-    this.classRoom = false;
-    this.course = true;
-  }
 }
