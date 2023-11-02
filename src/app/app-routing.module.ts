@@ -5,12 +5,17 @@ import { StudentComponent } from './dashboard/pages/student/student.component';
 import { CourseComponent } from './dashboard/pages/course/course.component';
 import { AuthComponent } from './auth/auth.component';
 import { StudentDetailComponent } from './dashboard/pages/student/components/student-detail/student-detail.component';
+import { HomeComponent } from './dashboard/pages/home/home.component';
 
 const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent,
     children: [
+      {
+        path: 'home',
+        component: HomeComponent
+      },
       {
         path: 'students',
         component: StudentComponent,
@@ -33,7 +38,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: 'dashboard'
+    redirectTo: 'dashboard/home'
   }
 ];
 

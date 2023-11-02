@@ -6,8 +6,6 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { StudentDialogComponent } from './components/student-dialog/student-dialog.component';
 import { StudentDetailComponent } from './components/student-detail/student-detail.component';
 
-
-
 @NgModule({
   declarations: [
     StudentComponent,

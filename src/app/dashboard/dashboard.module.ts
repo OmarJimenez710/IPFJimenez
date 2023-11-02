@@ -7,6 +7,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { StudentModule } from './pages/student/student.module';
 import { CourseModule } from './pages/course/course.module';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { HomeModule } from './pages/home/home.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
     MatSidenavModule,
     StudentModule,
     CourseModule,
-    SharedModule
+    HomeModule,
+    SharedModule,
   ],
   exports: [
     DashboardComponent
