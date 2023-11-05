@@ -53,8 +53,8 @@
               ],
               "outputHashing": "all",
               "fileReplacements": [{
-                "replace": "src/environment/environment.local.ts",
-                "with": "src/environment/environment.prod.ts"
+                "replace": "src/environment/environment.local.ts",                 
+                "with": "src/environment/environment.prod.ts"               
               }]
             },
             "development": {
