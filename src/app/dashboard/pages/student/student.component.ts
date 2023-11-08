@@ -19,7 +19,9 @@ export class StudentComponent {
       phone : 7226646819,
       email: "omar710.jimflo@gmail.com",
       civilStatus : 'Soltero',
-      occupation : 'Desarrollador FullStack'
+      occupation : 'Desarrollador FullStack',
+      token: '',
+      rol: '',
     },
     {
       id : 2,
@@ -29,7 +31,9 @@ export class StudentComponent {
       phone : 7222867980,
       email : "alda@gmail.com",
       civilStatus : '',
-      occupation : 'Hacker White Hat'
+      occupation : 'Hacker White Hat',
+      token: '',
+      rol: '',
     },
     {
       id : 3,
@@ -39,7 +43,9 @@ export class StudentComponent {
       phone : 7228947617,
       email : "citla@gmail.com",
       civilStatus : 'Casada',
-      occupation : 'Enfermera'
+      occupation : 'Enfermera',
+      token: '',
+      rol: '',
     },
   ];
 

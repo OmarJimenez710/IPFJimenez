@@ -1,6 +1,10 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, of } from 'rxjs';
+import { BehaviorSubject, Observable, map, of } from 'rxjs';
 import { IStudent } from 'src/app/dashboard/pages/student/models';
+import { environment } from 'src/environments/environment.local';
+import { LoginPayLoad } from '../models';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -10,21 +14,49 @@ export class AuthService {
   public authStudent$ = this._authStudent$.asObservable();
 
 
-  constructor() { }
+  constructor(
+    private httpClient: HttpClient,
+    private router : Router
+  ) { }
 
-  login(): Observable<IStudent>{
-    const student : IStudent = {
-      id : 710,
-      name : 'Omar',
-      lastname : 'Jimenez',
-      age : 23,
-      phone : 7229931578,
-      email : 'omar@gmail.com',
-      civilStatus : '',
-      occupation : 'fullstack development'
-    }
+  login(payload : LoginPayLoad): void{
+    this.httpClient.get<IStudent[]>(
+      `${environment.baseUrl}/users?email=${payload.email}&password=${payload.password}`).subscribe({
+        next: (response)=>{
+          if(!response.length){
+            alert('usuario invalido');
+          }else{
+            const authStudent = response[0];
+            this._authStudent$.next(authStudent);
+            localStorage.setItem('token', authStudent.token);
 
-    this._authStudent$.next(student);
-    return of<IStudent>(student) 
+            this.router.navigate(['/dashboard/home']);
+          }
+        }
+    })
+  }
+
+  verifyToken(): Observable<boolean>{
+    return this.httpClient.get<IStudent[]>(
+      `${environment.baseUrl}/users?token=${localStorage.getItem('token')}`
+      ).pipe(
+        map((student)=>{
+          if(!student.length){
+            return false;
+          }else{
+            const authStudent = student[0];
+            this._authStudent$.next(authStudent);
+            localStorage.setItem('token', authStudent.token);
+
+            return true;
+          }
+        })
+      )
+  }
+
+  logout():void {
+    this._authStudent$.next(null);
+    localStorage.removeItem('token');
+    this.router.navigate(['/auth/login']);
   }
 }

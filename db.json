@@ -3,7 +3,11 @@
       {
           "id": 2,
           "name": "Omar Uriel",
-          "lastName": "Jimenez"
+          "email": "omar.jimenez@gmail.com",
+          "lastName": "Jimenez",
+          "password": "1234" ,
+          "token": "asdfghjklñzxcvbnm",
+          "rol": "ADMIN"
       }
   ]
 }

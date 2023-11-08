@@ -1,15 +1,12 @@
 <mat-toolbar color="primary">
-    <button mat-icon-button class="example-icon" (click)="drawer.toggle()">
+    <button mat-icon-button (click)="drawer.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
     <span *ngIf="!student">My App</span>
     <span *ngIf="student">Alumnos</span>
     <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon favorite-icon">
-      <mat-icon>favorite</mat-icon>
-    </button>
-    <button mat-icon-button class="example-icon">
-      <mat-icon>share</mat-icon>
+    <button mat-icon-button (click)="logout()">
+      <mat-icon>logout</mat-icon>
     </button>
 </mat-toolbar>
   

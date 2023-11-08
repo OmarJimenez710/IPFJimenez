@@ -7,4 +7,6 @@ export interface IStudent {
     email : string;
     civilStatus : string;
     occupation : string;
+    token: string;
+    rol: string;
 }

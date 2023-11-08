@@ -18,42 +18,8 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: 'auth/login'
+    redirectTo: 'auth'
   }
-
-  //EAGER LOADING
-  // {
-  //   path: 'dashboard',
-  //   component: DashboardComponent,
-  //   children: [
-  //     {
-  //       path: 'home',
-  //       component: HomeComponent
-  //     },
-  //     {
-  //       path: 'students',
-  //       component: StudentComponent,
-  //       children: [
-  //         {
-  //           path: 'detail/:id',
-  //           component: StudentDetailComponent
-  //         }
-  //       ]
-  //     },
-  //     {
-  //       path: 'courses',
-  //       component: CourseComponent
-  //     }
-  //   ]
-  // },
-  // {
-  //   path: 'auth',
-  //   component: AuthComponent
-  // },
-  // {
-  //   path: '**',
-  //   redirectTo: 'dashboard/home'
-  // }
 ];
 
 @NgModule({
