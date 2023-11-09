@@ -1,10 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthComponent } from './auth/auth.component';
 import { dashboardGuard } from './core/guards/dashboard.guard';
 
 const routes: Routes = [
-  //LAZY LOADING
   {
     path: 'dashboard',
     canActivate: [dashboardGuard],
@@ -18,7 +16,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: 'auth'
+    redirectTo: 'auth/login'
   }
 ];
 

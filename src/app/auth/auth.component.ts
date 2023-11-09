@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 
 @Component({
@@ -8,7 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AuthComponent {
 
-  constructor(httpClient : HttpClient){
-
-  }
 }

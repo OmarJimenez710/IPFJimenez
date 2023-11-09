@@ -32,6 +32,9 @@ export class AuthService {
 
             this.router.navigate(['/dashboard/home']);
           }
+        },
+        error: (e)=>{
+          alert('El servidor NO se encuentra activo activelo desde terminal con json-server db.json --watch');
         }
     })
   }
