@@ -20,7 +20,6 @@ export class StudentTableComponent {
   constructor(private router : Router){}
 
   goToDetail(idStudent : number){
-    console.log("gola");
     this.router.navigate(['dashboard', 'students', 'detail', idStudent],{
       queryParams: {
         search: 'hola mundo'
