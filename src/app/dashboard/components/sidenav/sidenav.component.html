@@ -1,4 +1,8 @@
-<nav class="m-4">
+<nav class="m-4 text-center">
+    <img src="{{image}}" class="img-fluid" style="width: 100px;">
+    <p class="text-size">{{completeName}}</p>
+    <p class="text-size mb-4">{{email}}</p>
+
     <button  
         class="mb-4 ps-4 pe-4 btn-nav w-100"
         mat-raised-button
@@ -17,7 +21,8 @@
        
     <button          
         class="mb-4 ps-4 pe-4 btn-nav w-100"
-        mat-raised-button>
+        mat-raised-button
+        routerLink="lessons">
         <mat-icon>co_present</mat-icon>
         Clases
     </button>

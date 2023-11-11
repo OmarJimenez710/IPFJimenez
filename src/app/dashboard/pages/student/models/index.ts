@@ -5,8 +5,10 @@ export interface IStudent {
     age : number;
     phone : number;
     email : string;
+    password: string;
     civilStatus : string;
     occupation : string;
     token: string;
     rol: string;
+    image: string;
 }

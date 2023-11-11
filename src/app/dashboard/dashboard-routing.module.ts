@@ -26,6 +26,11 @@ import { DashboardComponent } from './dashboard.component';
                         import('./pages/course/course.module').then((m) => m.CourseModule)
                 },
                 {
+                    path: 'lessons',
+                    loadChildren: ()=>
+                        import('./pages/lesson/lesson.module').then((m)=> m.LessonModule)
+                },
+                {
                     path: 'auth',
                     component: AuthComponent
                 },
@@ -35,6 +40,10 @@ import { DashboardComponent } from './dashboard.component';
                 }
             ]
         },
+        {
+            path: '**',
+            redirectTo: 'dashboard/home'
+        }
         ])
     ],
 })

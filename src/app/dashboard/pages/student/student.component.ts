@@ -18,10 +18,12 @@ export class StudentComponent {
       age : 23,
       phone : 7226646819,
       email: "omar710.jimflo@gmail.com",
+      password : '1234',
       civilStatus : 'Soltero',
       occupation : 'Desarrollador FullStack',
       token: '',
       rol: '',
+      image: ''
     },
     {
       id : 2,
@@ -30,10 +32,12 @@ export class StudentComponent {
       age : 28,
       phone : 7222867980,
       email : "alda@gmail.com",
+      password : '1234',
       civilStatus : '',
       occupation : 'Hacker White Hat',
       token: '',
       rol: '',
+      image: ''
     },
     {
       id : 3,
@@ -42,10 +46,12 @@ export class StudentComponent {
       age : 25,
       phone : 7228947617,
       email : "citla@gmail.com",
+      password : '1234',
       civilStatus : 'Casada',
       occupation : 'Enfermera',
       token: '',
       rol: '',
+      image: ''
     },
   ];
 
