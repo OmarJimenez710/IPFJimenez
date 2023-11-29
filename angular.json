@@ -52,10 +52,12 @@
                 }
               ],
               "outputHashing": "all",
-              "fileReplacements": [{
-                "replace": "src/environment/environment.local.ts",                 
-                "with": "src/environment/environment.prod.ts"               
-              }]
+              "fileReplacements": [
+                {
+                  "replace": "src/environment/environment.local.ts",
+                  "with": "src/environment/environment.prod.ts"
+                }
+              ]
             },
             "development": {
               "buildOptimizer": false,
@@ -108,5 +110,10 @@
         }
       }
     }
+  },
+  "cli": {
+    "schematicCollections": [
+      "@ngrx/schematics"
+    ]
   }
 }

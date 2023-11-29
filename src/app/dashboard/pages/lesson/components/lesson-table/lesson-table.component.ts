@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ILesson } from '../../models';
+import { ILesson } from 'src/app/models/lesson.model';
 
 @Component({
   selector: 'app-lesson-table',

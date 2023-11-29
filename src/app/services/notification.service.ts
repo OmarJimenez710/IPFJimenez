@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { Subject } from 'rxjs';
+import { IbodyNotification } from '../models/notification.model';
 import Swal from 'sweetalert2';
-import { IbodyNotification } from './models/notification';
 
 @Injectable({
   providedIn: 'root'

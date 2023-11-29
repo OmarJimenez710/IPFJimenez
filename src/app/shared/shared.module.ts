@@ -11,6 +11,7 @@ import { FormErrorsPipe } from './pipes/form-errors.pipe';
 import { TextPluginsPipe } from './pipes/text-plugins.pipe';
 import { MatCardModule } from '@angular/material/card';
 import { RouterModule } from '@angular/router';
+import { MatSelectModule } from '@angular/material/select'; 
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { RouterModule } from '@angular/router';
     FormErrorsPipe,
     TextPluginsPipe,
     MatCardModule,
-    RouterModule
+    RouterModule,
+    MatSelectModule
   ]
 })
 export class SharedModule { }

@@ -1,8 +1,8 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { IStudent } from '../../models';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TITLE_LIST } from 'src/app/list/title.list';
+import { IStudent } from 'src/app/models/student.model';
 
 @Component({
   selector: 'app-student-dialog',

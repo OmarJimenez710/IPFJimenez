@@ -1,7 +1,44 @@
 {
+
+  "students": [{
+    "id" : 1,
+    "name" : "Pedro",
+    "lastname" : "Ortega",
+    "age" : 17,
+    "phone" : 7228896471,
+    "email" : "ojimenezf882@alumno.uaemex.com",
+    "civilStatus" : "soltero",
+    "semester" : "9no semestre",
+    "rol" : "STUDENT"
+  },
+  {
+    "id" : 2,
+    "name" : "Maria",
+    "lastname" : "Perez",
+    "age" : 20,
+    "phone" : 7228896471,
+    "email" : "mperezf447@alumno.uaemex.com",
+    "civilStatus" : "soltero",
+    "semester" : "10mo semestre",
+    "rol" : "STUDENT"
+  },
+  {
+    "id" : 3,
+    "name" : "Andrea",
+    "lastname" : "Tobon",
+    "age" : 21,
+    "phone" : 7228896471,
+    "email" : "atobons741@alumno.uaemex.com",
+    "civilStatus" : "soltero",
+    "semester" : "7no semestre",
+    "rol" : "STUDENT"
+  }
+
+  ],
+
   "users": [
       {
-          "id" : 5,
+          "id" : 1,
           "name" : "Omar",
           "lastname" : "Jimenez",
           "age" : 23,
@@ -11,11 +48,11 @@
           "civilStatus" : "soltero",
           "occupation" : "FullStack Engineer",
           "token" : "asdfghjklñzxcvbnm",
-          "rol" : "Developed",
+          "rol" : "ADMIN",
           "image": "../../../../assets/img/perfilMan.png"
       },
       {
-        "id" : 7,
+        "id" : 1,
         "name" : "Virginia",
         "lastname" : "Cardoso",
         "age" : 45,
@@ -25,7 +62,7 @@
         "civilStatus" : "casada",
         "occupation" : "Educacion superior",
         "token" : "mnbvcxñlkjhgfdsa",
-        "rol" : "profesora",
+        "rol" : "EMPLOYEE",
         "image": "../../../../assets/img/perfilWoman.png"
     }
   ],
@@ -70,6 +107,57 @@
       "hourToStart" : "15:00 pm",
       "hourToFinish" : "17:00 pm",
       "numberStudent" : 34
+    }
+  ],
+
+
+
+  "courses": [
+    {
+      "id": 1,
+      "name" : "Curso de Java Básico",
+      "description" : "Curso de Java para principiantes en donde aprenderas habilidades para tu vida futura como programador",
+      "duration": "5:50:10",
+      "starts": 3
+    },
+    {
+      "id": 2,
+      "name": "Curso de Java Intermedio",
+      "description": "Curso de Java donde prodrás aplicar lo aprendido en proyectos reales",
+      "duration": "3:42:48",
+      "starts": 5
+    },
+    {
+      "id": 3,
+      "name": "Curso de Java Avanzado",
+      "description" : "Curso de Java donde realizaras grandes proyectos para empresas como BBVA",
+      "duration": "5:50:10",
+      "starts": 4
+    }
+  ],
+
+
+
+  "enrollments": [
+    {
+      "id" : 1,
+      "courseId": 1,
+      "userId" : 1
+    },
+    {
+      "id" : 2,
+      "courseId": 3,
+      "userId" : 2
+    },
+    {
+      "id" : 3,
+      "courseId": 3,
+      "userId" : 1
+    },
+    {
+      "id" : 4,
+      "courseId": 2,
+      "userId" : 2
     }
   ]
 }

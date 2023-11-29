@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthService } from 'src/app/auth/services/auth.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-sidenav',
@@ -12,7 +12,7 @@ export class SidenavComponent {
   image!: string | undefined;
 
   constructor(private authService : AuthService){
-    authService.authStudent$.subscribe({
+    authService.authUser$.subscribe({
       next: (student)=>{
         this.completeName = student?.name + ' ' + student?.lastname;
         this.email = student?.email;

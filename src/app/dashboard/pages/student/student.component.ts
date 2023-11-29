@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
-import { IStudent } from './models';
 import { MatDialog } from '@angular/material/dialog';
 import { StudentDialogComponent } from './components/student-dialog/student-dialog.component';
-import { NotificationService } from '../../services/notification.service';
+import { Observable, map } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { selectAuthStudent } from 'src/app/store/auth/auth.selectors';
+import { IStudent } from 'src/app/models/student.model';
+import { NotificationService } from 'src/app/services/notification.service';
 
 @Component({
   selector: 'app-student',
@@ -18,12 +21,9 @@ export class StudentComponent {
       age : 23,
       phone : 7226646819,
       email: "omar710.jimflo@gmail.com",
-      password : '1234',
       civilStatus : 'Soltero',
-      occupation : 'Desarrollador FullStack',
-      token: '',
-      rol: '',
-      image: ''
+      semester: '9no semestre',
+      rol: 'STUDENT',
     },
     {
       id : 2,
@@ -32,12 +32,9 @@ export class StudentComponent {
       age : 28,
       phone : 7222867980,
       email : "alda@gmail.com",
-      password : '1234',
       civilStatus : '',
-      occupation : 'Hacker White Hat',
-      token: '',
-      rol: '',
-      image: ''
+      semester: '4to semestre',
+      rol: 'STUDENT',
     },
     {
       id : 3,
@@ -46,19 +43,22 @@ export class StudentComponent {
       age : 25,
       phone : 7228947617,
       email : "citla@gmail.com",
-      password : '1234',
       civilStatus : 'Casada',
-      occupation : 'Enfermera',
-      token: '',
-      rol: '',
-      image: ''
+      semester : '7mo semestre',
+      rol: 'STUDENT',
     },
   ];
 
+  studentRole : Observable<string | undefined>;
+
   constructor(
     private matDialog : MatDialog,
-    private notifier: NotificationService
-  ){}
+    private notifier: NotificationService,
+    private store : Store
+  ){
+    this.studentRole = this.store.select(selectAuthStudent)
+    .pipe(map((u) => u?.rol));
+  }
 
   addStudent() : void {
     this.matDialog.open(StudentDialogComponent).afterClosed().subscribe({

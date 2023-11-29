@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { AuthComponent } from '../auth/auth.component';
 import { DashboardComponent } from './dashboard.component';
+import { adminGuard } from '../core/guards/admin.guard';
 
 @NgModule({
     imports: [
@@ -17,6 +18,7 @@ import { DashboardComponent } from './dashboard.component';
                 },
                 {
                     path: 'students',
+                    canActivate: [adminGuard],
                     loadChildren: ()=> 
                         import('./pages/student/student.module').then((m) => m.StudentModule) 
                 },
@@ -24,6 +26,11 @@ import { DashboardComponent } from './dashboard.component';
                     path: 'courses',
                     loadChildren: ()=>
                         import('./pages/course/course.module').then((m) => m.CourseModule)
+                },
+                {
+                    path: 'enrollments',
+                    loadChildren: ()=>
+                        import('./pages/enrollments/enrollments.module').then((m) => m.EnrollmentsModule)
                 },
                 {
                     path: 'lessons',

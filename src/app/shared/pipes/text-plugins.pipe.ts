@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { IStudent } from 'src/app/dashboard/pages/student/models';
+import { IStudent } from 'src/app/models/student.model';
 
 @Pipe({
   name: 'textPlugins'

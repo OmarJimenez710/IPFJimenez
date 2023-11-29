@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { IStudent } from '../../models';
 import { Router } from '@angular/router';
+import { IStudent } from 'src/app/models/student.model';
 
 @Component({
   selector: 'app-student-table',

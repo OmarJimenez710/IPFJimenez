@@ -1,5 +1,5 @@
 import { Component, Input, Output } from '@angular/core';
-import { ICourse } from '../../models';
+import { ICourse } from 'src/app/models/course.model';
 
 @Component({
   selector: 'app-course-table',

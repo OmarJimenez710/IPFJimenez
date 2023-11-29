@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { ICourse } from '../pages/course/models';
 import { BehaviorSubject, Subject } from 'rxjs';
+import { ICourse } from '../models/course.model';
 
 @Injectable({
   providedIn: 'root'
@@ -40,3 +40,7 @@ export class CourseService {
     return this.course$;
   }
 }
+
+
+
+
