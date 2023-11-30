@@ -1,122 +1,116 @@
 {
-
-  "students": [{
-    "id" : 1,
-    "name" : "Pedro",
-    "lastname" : "Ortega",
-    "age" : 17,
-    "phone" : 7228896471,
-    "email" : "ojimenezf882@alumno.uaemex.com",
-    "civilStatus" : "soltero",
-    "semester" : "9no semestre",
-    "rol" : "STUDENT"
-  },
-  {
-    "id" : 2,
-    "name" : "Maria",
-    "lastname" : "Perez",
-    "age" : 20,
-    "phone" : 7228896471,
-    "email" : "mperezf447@alumno.uaemex.com",
-    "civilStatus" : "soltero",
-    "semester" : "10mo semestre",
-    "rol" : "STUDENT"
-  },
-  {
-    "id" : 3,
-    "name" : "Andrea",
-    "lastname" : "Tobon",
-    "age" : 21,
-    "phone" : 7228896471,
-    "email" : "atobons741@alumno.uaemex.com",
-    "civilStatus" : "soltero",
-    "semester" : "7no semestre",
-    "rol" : "STUDENT"
-  }
-
-  ],
-
-  "users": [
-      {
-          "id" : 1,
-          "name" : "Omar",
-          "lastname" : "Jimenez",
-          "age" : 23,
-          "phone" : 7228896471,
-          "email" : "omar.jimenez@gmail.com",
-          "password": "1234",
-          "civilStatus" : "soltero",
-          "occupation" : "FullStack Engineer",
-          "token" : "asdfghjklñzxcvbnm",
-          "rol" : "ADMIN",
-          "image": "../../../../assets/img/perfilMan.png"
-      },
-      {
-        "id" : 1,
-        "name" : "Virginia",
-        "lastname" : "Cardoso",
-        "age" : 45,
-        "phone" : 7224567481,
-        "email" : "vicky@gmail.com",
-        "password": "5678",
-        "civilStatus" : "casada",
-        "occupation" : "Educacion superior",
-        "token" : "mnbvcxñlkjhgfdsa",
-        "rol" : "EMPLOYEE",
-        "image": "../../../../assets/img/perfilWoman.png"
-    }
-  ],
-
-  "lessons": [
+  "students": [
     {
       "id": 1,
-      "name" : "Algebra Superior",
-      "teacher" : "Luis Mendez",
-      "hourToStart" : "9:00 am",
-      "hourToFinish" : "11:00 am",
-      "numberStudent" : 25
+      "name": "Pedro",
+      "lastname": "Ortega",
+      "age": 17,
+      "phone": 7228896471,
+      "email": "ojimenezf882@alumno.uaemex.com",
+      "civilStatus": "soltero",
+      "semester": "9no semestre",
+      "rol": "STUDENT"
     },
     {
       "id": 2,
-      "name" : "Calculo integral",
-      "teacher" : "Virginia Flores",
-      "hourToStart" : "12:00 pm",
-      "hourToFinish" : "14:00 pm",
-      "numberStudent" : 15
+      "name": "Maria",
+      "lastname": "Perez",
+      "age": 20,
+      "phone": 7228896471,
+      "email": "mperezf447@alumno.uaemex.com",
+      "civilStatus": "soltero",
+      "semester": "10mo semestre",
+      "rol": "STUDENT"
     },
     {
       "id": 3,
-      "name" : "Programación avanzada",
-      "teacher" : "Roberto Palazuelos",
-      "hourToStart" : "7:00 am",
-      "hourToFinish" : "10:00 am",
-      "numberStudent" : 40
+      "name": "Andrea",
+      "lastname": "Tobon",
+      "age": 21,
+      "phone": 7228896471,
+      "email": "atobons741@alumno.uaemex.com",
+      "civilStatus": "soltero",
+      "semester": "7no semestre",
+      "rol": "STUDENT"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Omar",
+      "lastname": "Jimenez",
+      "age": 23,
+      "phone": 7228896471,
+      "email": "omar.jimenez@gmail.com",
+      "password": "1234",
+      "civilStatus": "soltero",
+      "occupation": "FullStack Engineer",
+      "token": "asdfghjklñzxcvbnm",
+      "rol": "ADMIN",
+      "image": "../../../../assets/img/perfilMan.png"
+    },
+    {
+      "id": 1,
+      "name": "Virginia",
+      "lastname": "Cardoso",
+      "age": 45,
+      "phone": 7224567481,
+      "email": "vicky@gmail.com",
+      "password": "5678",
+      "civilStatus": "casada",
+      "occupation": "Educacion superior",
+      "token": "mnbvcxñlkjhgfdsa",
+      "rol": "EMPLOYEE",
+      "image": "../../../../assets/img/perfilWoman.png"
+    }
+  ],
+  "lessons": [
+    {
+      "id": 1,
+      "name": "Algebra Superior",
+      "teacher": "Luis Mendez",
+      "hourToStart": "9:00 am",
+      "hourToFinish": "11:00 am",
+      "numberStudent": 25
+    },
+    {
+      "id": 2,
+      "name": "Calculo integral",
+      "teacher": "Virginia Flores",
+      "hourToStart": "12:00 pm",
+      "hourToFinish": "14:00 pm",
+      "numberStudent": 15
+    },
+    {
+      "id": 3,
+      "name": "Programación avanzada",
+      "teacher": "Roberto Palazuelos",
+      "hourToStart": "7:00 am",
+      "hourToFinish": "10:00 am",
+      "numberStudent": 40
     },
     {
       "id": 4,
-      "name" : "Metricas de software",
-      "teacher" : "Aldair Garcia",
-      "hourToStart" : "11:00 am",
-      "hourToFinish" : "13:00 am",
-      "numberStudent" : 7
+      "name": "Metricas de software",
+      "teacher": "Aldair Garcia",
+      "hourToStart": "11:00 am",
+      "hourToFinish": "13:00 am",
+      "numberStudent": 7
     },
     {
       "id": 5,
-      "name" : "Programación Orientada a Objetos",
-      "teacher" : "Francisco Chavez",
-      "hourToStart" : "15:00 pm",
-      "hourToFinish" : "17:00 pm",
-      "numberStudent" : 34
+      "name": "Programación Orientada a Objetos",
+      "teacher": "Francisco Chavez",
+      "hourToStart": "15:00 pm",
+      "hourToFinish": "17:00 pm",
+      "numberStudent": 34
     }
   ],
-
-
-
   "courses": [
     {
       "id": 1,
-      "name" : "Curso de Java Básico",
-      "description" : "Curso de Java para principiantes en donde aprenderas habilidades para tu vida futura como programador",
+      "name": "Curso de Java Básico",
+      "description": "Curso de Java para principiantes en donde aprenderas habilidades para tu vida futura como programador",
       "duration": "5:50:10",
       "starts": 3
     },
@@ -130,34 +124,21 @@
     {
       "id": 3,
       "name": "Curso de Java Avanzado",
-      "description" : "Curso de Java donde realizaras grandes proyectos para empresas como BBVA",
+      "description": "Curso de Java donde realizaras grandes proyectos para empresas como BBVA",
       "duration": "5:50:10",
       "starts": 4
     }
   ],
-
-
-
   "enrollments": [
     {
-      "id" : 1,
+      "id": 1,
       "courseId": 1,
-      "userId" : 1
+      "userId": 1
     },
     {
-      "id" : 2,
+      "id": 3,
       "courseId": 3,
-      "userId" : 2
-    },
-    {
-      "id" : 3,
-      "courseId": 3,
-      "userId" : 1
-    },
-    {
-      "id" : 4,
-      "courseId": 2,
-      "userId" : 2
+      "userId": 1
     }
   ]
 }

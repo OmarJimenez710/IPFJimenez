@@ -6,6 +6,7 @@ import { Store } from '@ngrx/store';
 import { selectAuthStudent } from 'src/app/store/auth/auth.selectors';
 import { IStudent } from 'src/app/models/student.model';
 import { NotificationService } from 'src/app/services/notification.service';
+import { StudentService } from 'src/app/services/student.service';
 
 @Component({
   selector: 'app-student',
@@ -13,98 +14,75 @@ import { NotificationService } from 'src/app/services/notification.service';
   styleUrls: ['./student.component.scss']
 })
 export class StudentComponent {
-  student : IStudent [] = [
-    {
-      id : 1,
-      name : "Omar",
-      lastname : "Jimenez",
-      age : 23,
-      phone : 7226646819,
-      email: "omar710.jimflo@gmail.com",
-      civilStatus : 'Soltero',
-      semester: '9no semestre',
-      rol: 'STUDENT',
-    },
-    {
-      id : 2,
-      name : "Aldair",
-      lastname : "Flores",
-      age : 28,
-      phone : 7222867980,
-      email : "alda@gmail.com",
-      civilStatus : '',
-      semester: '4to semestre',
-      rol: 'STUDENT',
-    },
-    {
-      id : 3,
-      name : "Citlali",
-      lastname : "Garcia",
-      age : 25,
-      phone : 7228947617,
-      email : "citla@gmail.com",
-      civilStatus : 'Casada',
-      semester : '7mo semestre',
-      rol: 'STUDENT',
-    },
-  ];
-
-  studentRole : Observable<string | undefined>;
+  studentRole: Observable<string | undefined>;
+  public studentList!: IStudent[];
 
   constructor(
-    private matDialog : MatDialog,
+    private studentService: StudentService,
+    private matDialog: MatDialog,
     private notifier: NotificationService,
-    private store : Store
-  ){
+    private store: Store
+  ) {
     this.studentRole = this.store.select(selectAuthStudent)
-    .pipe(map((u) => u?.rol));
+      .pipe(map((u) => u?.rol));
   }
 
-  addStudent() : void {
+  ngOnInit(): void {
+    this.studentService.getStudents().subscribe({
+      next: (response) => {
+        this.studentList = response;
+      }
+    })
+  }
+
+  public addStudent(): void {
     this.matDialog.open(StudentDialogComponent).afterClosed().subscribe({
-      next : 
-        (dataStudent) =>{
-          if(!!dataStudent){
-            this.student = [
-              ...this.student,
-              {
-                ...dataStudent,
-                id : this.student[this.student.length - 1].id + 1
+      next:
+        (dataStudent) => {
+          this.studentService.addStudent(dataStudent);
+          if (!!dataStudent) {
+            this.studentService.addStudent(dataStudent).subscribe({
+              next: (response) => {
+                this.studentList = response;
               }
-            ]
-            this.notifier.sucessNotification("Dado de alta","Registro dado de alta correctamente", 'success');
+            })
+            this.notifier.sucessNotification("Dado de alta", "Registro dado de alta correctamente", 'success');
           }
         }
     }
     );
   }
 
-  editStudent(student : IStudent) : void {
+  public editStudent(student: IStudent): void {
     this.matDialog.open(StudentDialogComponent,{
       data : student
     }).afterClosed().subscribe({
       next : (dataStudent) => {
         if(!!dataStudent){
-          this.student = this.student.map((oldDataStudent)=> 
-            oldDataStudent.id == student.id?
-            {...oldDataStudent,...dataStudent} 
-            : oldDataStudent
-          );
+          this.studentService.updateStudent(dataStudent.id, dataStudent).subscribe({
+            next: (response)=>{
+              this.studentList = response;
+            }
+          })
+
           this.notifier.sucessNotification("Editado","Registro editado correctamente",'success');
         }
       }
     })
   }
 
-  deleteStudent(idStudent : number) : void {
+  public deleteStudent(idStudent: number): void {
     this.notifier.questionNotification(
       "¿Está seguro de eliminar?",
       "Al eliminar el registro se borraran todo sus datos permanentemente",
       "question"
-    ).then((response)=>{
-      if(response.isConfirmed){
-        this.student = this.student.filter((realData) => realData.id !== idStudent);
-        this.notifier.sucessNotification("Eliminado", "Registro Eliminado Correctamente", "success");
+    ).then((response) => {
+      if (response.isConfirmed) {
+        this.studentService.deleteStudent(idStudent).subscribe({
+          next: (response) => {
+            this.studentList = response;
+          }
+        })
       }
     })
   }

@@ -44,7 +44,7 @@ export class StudentDialogComponent {
         Validators.email
       ]],
       civilStatus : ['', Validators.required],
-      occupation : ['']
+      semester : ['']
     })
 
     if(student){

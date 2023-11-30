@@ -14,7 +14,7 @@ export class StudentTableComponent {
   @Output()
   deleteStudent = new EventEmitter<number>();
 
-  displayedColumns = ["Id", "Nombre", "Edad", "Correo", "Ocupacion", "Acciones"];
+  displayedColumns = ["Id", "Nombre", "Edad", "Teléfono", "Correo", "Semestre", "Acciones"];
 
   constructor(private router : Router){}
 

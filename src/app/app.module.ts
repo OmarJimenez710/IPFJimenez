@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModule } from './core/core.module';
 import { StoreModule } from '@ngrx/store';
-import { CounterComponent } from './counter/counter.component';
 import { appReducer } from './store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
@@ -14,7 +13,6 @@ import { EffectsModule } from '@ngrx/effects';
 @NgModule({
   declarations: [
     AppComponent,
-    CounterComponent,
   ],
   imports: [
     BrowserModule,
