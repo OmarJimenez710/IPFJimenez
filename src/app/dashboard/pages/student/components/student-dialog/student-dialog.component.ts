@@ -13,6 +13,19 @@ export class StudentDialogComponent {
   TITLE_LIST = TITLE_LIST;
   studentForm : FormGroup;
   titleForm : string = '';
+
+  selectSemester = [
+    { name: '1er semestre' },
+    { name: '2do semestre' },
+    { name: '3ro semestre' },
+    { name: '4to semestre' },
+    { name: '5to semestre' },
+    { name: '6to semestre' },
+    { name: '7mo semestre' },
+    { name: '8vo semestre' },
+    { name: '9no semestre' },
+    { name: '10mo semestre' },
+  ]
   
   constructor(
     private fb : FormBuilder,
@@ -22,6 +35,7 @@ export class StudentDialogComponent {
     this.titleForm = TITLE_LIST.addStudent;
 
     this.studentForm = this.fb.group({
+      id: ['',[]],
       name : ['',[
         Validators.required,
         Validators.minLength(2),

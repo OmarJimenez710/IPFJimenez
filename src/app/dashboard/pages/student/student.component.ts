@@ -59,13 +59,13 @@ export class StudentComponent {
     }).afterClosed().subscribe({
       next : (dataStudent) => {
         if(!!dataStudent){
-          this.studentService.updateStudent(dataStudent.id, dataStudent).subscribe({
+          console.log(dataStudent);
+          this.studentService.updateStudent(dataStudent).subscribe({
             next: (response)=>{
               this.studentList = response;
             }
           })
-
-          this.notifier.sucessNotification("Editado","Registro editado correctamente",'success');
+         this.notifier.sucessNotification("Editado","Registro editado correctamente",'success');
         }
       }
     })

@@ -25,8 +25,8 @@ export class StudentService {
     .pipe(concatMap(()=> this.getStudents()));
   }
 
-  public updateStudent(idStudent: number, student: IStudent): Observable<IStudent[]>{
-    return this.http.put<IStudent>(`${environment.baseUrl}/students/${idStudent}`, student)
+  public updateStudent(student: IStudent): Observable<IStudent[]>{
+    return this.http.put<IStudent>(`${environment.baseUrl}/students/${student.id}`, student)
     .pipe(concatMap(()=> this.getStudents()));
   }
 }

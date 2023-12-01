@@ -3,13 +3,12 @@
     {
       "id": 1,
       "name": "Pedro",
-      "lastname": "Ortega",
+      "lastname": "Garcia",
       "age": 17,
-      "phone": 7228896471,
-      "email": "ojimenezf882@alumno.uaemex.com",
+      "phone": 7228726471,
+      "email": "pgarciaj710@alumno.uaemex.com",
       "civilStatus": "soltero",
-      "semester": "9no semestre",
-      "rol": "STUDENT"
+      "semester": "9no semestre"
     },
     {
       "id": 2,
@@ -32,6 +31,16 @@
       "civilStatus": "soltero",
       "semester": "7no semestre",
       "rol": "STUDENT"
+    },
+    {
+      "name": "Omar",
+      "lastname": "Jimenez",
+      "age": "20",
+      "phone": "7226636514",
+      "email": "ojimenezf882@alumno.uaemex.mx",
+      "civilStatus": "soltero",
+      "semester": "4to semestre",
+      "id": 4
     }
   ],
   "users": [

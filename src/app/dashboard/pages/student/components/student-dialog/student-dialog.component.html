@@ -64,10 +64,9 @@
       <div class="col-4">
         <mat-form-field>
           <mat-label>Semestre</mat-label>
-          <input matInput formControlName="semester">
-          <mat-error>
-            {{studentForm.get('semester')?.errors | formErrors}}
-          </mat-error>
+          <mat-select  formControlName="semester">
+            <mat-option *ngFor="let semester of selectSemester" value="{{semester.name}}">{{semester.name}}</mat-option>
+          </mat-select>
         </mat-form-field>
       </div>
     </div>
