@@ -1,11 +1,14 @@
 <app-course-table
     [dataSource]= "(course | async) || []"
+    (editCourse)="editCourse($event)"
+    (deleteCourse)="deleteCourse($event)"
 >
 </app-course-table>
 
 <button 
     mat-fab color="primary" 
     class="add-btn"
+    (click)="addCourse()"
     >
-    <mat-icon>format_list_bulleted_add</mat-icon>
+    <mat-icon>add</mat-icon>
 </button>

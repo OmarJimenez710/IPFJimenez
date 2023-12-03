@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ILesson } from 'src/app/models/lesson.model';
 
 @Component({
@@ -11,6 +11,20 @@ export class LessonTableComponent {
   @Input()
     dataSource : ILesson[] = [];
 
-  displayedColumns: string[] = ['Nombre', 'Profesor', 'HoraInicio', 'HoraTermino', 'CantidadAlumnos'];
+  @Output()
+    editLesson = new EventEmitter<ILesson>();
+
+  @Output()
+    deleteLesson = new EventEmitter<number>();
+  
+
+  displayedColumns: string[] = [
+    'Nombre', 
+    'Profesor', 
+    'HoraInicio', 
+    'HoraTermino', 
+    'CantidadAlumnos',
+    'Acciones'
+  ];
 }
 

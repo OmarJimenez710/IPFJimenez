@@ -1,4 +1,8 @@
 export enum TITLE_LIST {
-    addStudent = "Agregar Estudiante",
-    editStudent = "Editar Estudiante"
+    addStudent = "Agregar Alumno",
+    editStudent = "Editar Alumno",
+    addLesson = 'Agregar Clase',
+    editLesson = 'Editar Clase',
+    addCourse = 'Agregar Curso',
+    editCourse = 'Editar Curso',
 }

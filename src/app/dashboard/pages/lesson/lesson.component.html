@@ -1,6 +1,15 @@
 <app-lesson-table 
     [dataSource] = "(lesson$ | async) || []"
+    (editLesson)="editLesson($event)"
+    (deleteLesson)="deleteLesson($event)"
 >
 </app-lesson-table>
+
+<button 
+    mat-fab color="primary" 
+    class="add-btn"
+    (click)="addLesson()">
+    <mat-icon>add</mat-icon>
+</button>
 
 <router-outlet></router-outlet>
