@@ -1,46 +1,34 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Subject } from 'rxjs';
+import { Observable, concat, concatMap } from 'rxjs';
 import { ICourse } from '../models/course.model';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment.local';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CourseService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  private course : ICourse[] = [
-    {
-      name: "Curso de Java Básico",
-      description : "Curso de Java para principiantes en donde aprenderas habilidades para tu vida futura como programador",
-      duration : "5:50:10",
-      starts : 3
-    },
-    {
-      name: "Curso de Java Intermedio",
-      description : "Curso de Java donde prodrás aplicar lo aprendido en proyectos reales",
-      duration : "3:42:48",
-      starts : 5
-    },
-    {
-      name: "Curso de Java Avanzado",
-      description : "Curso de Java donde realizaras grandes proyectos para empresas como BBVA",
-      duration : "5:50:10",
-      starts : 4
-    }
-  ]
-
-  private course$ = new BehaviorSubject<ICourse[]>([]);
-
-  loadCourse() : void {
-    this.course$.next(this.course);
+  public getCourse(): Observable<ICourse[]>{
+    return this.http.get<ICourse[]>(`${environment.baseUrl}/courses`);
   }
 
-  getCourse(): Subject<ICourse[]>{
-    return this.course$;
+  public addCourse(course: ICourse): Observable<ICourse[]>{
+    return this.http.post<ICourse>(`${environment.baseUrl}/courses`, course)
+      .pipe(concatMap(()=> this.getCourse()));
+  }
+
+  public updateCourse(course: ICourse): Observable<ICourse[]>{
+    return this.http.put<ICourse>(`${environment.baseUrl}/courses/${course.id}`, course)
+      .pipe(concatMap(()=> this.getCourse()));
+  }
+
+  public deleteCourse(idCourse: number): Observable<ICourse[]>{
+    return this.http.delete(`${environment.baseUrl}/courses/${idCourse}`)
+      .pipe(concatMap(()=> this.getCourse()));
   }
 }
-
-
 
 

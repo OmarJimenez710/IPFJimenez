@@ -10,10 +10,7 @@ export const EnrollmentActions = createActionGroup({
     'Load Enrollments Success': props<{ data: any[] }>(),
     'Load Enrollments Failure': props<{ error: unknown }>(),
     'Load Enrollments Options': emptyProps(),
-    'Load Enrollments Options Success': props<{
-      courses: ICourse[],
-      students: IStudent[]
-    }>(),
+    'Load Enrollments Options Success': props<{courses: ICourse[],students: IStudent[]}>(),
     'Load Enrollments Options Failure': props<{error: undefined}>(),
     'Create Enrollment': props<{payload: CreateEnrollmentPayload}>(),
     'Create Enrollment Failure': props<{error: unknown}>(),

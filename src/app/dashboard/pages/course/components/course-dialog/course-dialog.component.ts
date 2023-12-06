@@ -12,6 +12,7 @@ import { ICourse } from 'src/app/models/course.model';
 export class CourseDialogComponent {
   formCourse: FormGroup;
   public titleForm: string = '';
+  public save: boolean = true;
 
   constructor(
     private fb: FormBuilder,
@@ -20,6 +21,7 @@ export class CourseDialogComponent {
     ){
     this.titleForm = TITLE_LIST.addCourse;
     this.formCourse = this.fb.group({
+      id: [''],
       name: ['', [Validators.required]],
       description: ['', [Validators.required]],
       duration: ['', [Validators.required]],
@@ -27,8 +29,17 @@ export class CourseDialogComponent {
     })
 
     if(course){
+      this.save = false;
       this.titleForm = TITLE_LIST.editCourse;
       this.formCourse.patchValue(course);
+    }
+  }
+
+  public saveData(): void {
+    if(this.formCourse.invalid){
+      this.formCourse.markAllAsTouched();
+    }else{
+      this.matDialogRef.close(this.formCourse.value);
     }
   }
 }

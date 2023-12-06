@@ -24,6 +24,7 @@ export class LessonDialogComponent {
     this.titleForm = TITLE_LIST.addLesson;
 
     this.lessonForm = this.fb.group({
+      id: [''],
       name: ['', [Validators.required]],
       teacher: ['', [Validators.required]],
       hourToStart: ['', [Validators.required]],
@@ -36,5 +37,13 @@ export class LessonDialogComponent {
       this.titleForm = TITLE_LIST.editLesson;
       this.lessonForm.patchValue(lesson);
     }
-   }
+  }
+
+  public sendData(): void {
+    if(this.lessonForm.invalid){
+      this.lessonForm.markAllAsTouched();
+    }else{
+      this.matDialogRef.close(this.lessonForm.value);
+    }
+  }
 }

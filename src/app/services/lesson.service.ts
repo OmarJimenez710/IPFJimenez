@@ -16,17 +16,17 @@ export class LessonService {
   }
 
   createLesson(lesson : ILesson): Observable<ILesson[]>{
-    return this.httpClient.post<ILesson>(`${environment.baseUrl}/lesson`, lesson)
+    return this.httpClient.post<ILesson>(`${environment.baseUrl}/lessons`, lesson)
     .pipe(concatMap(() => this.getLesson()));
   } 
   
-  updateLesson(idLesson : number, lesson : ILesson) : Observable<ILesson[]>{
-    return this.httpClient.put<ILesson>(`${environment.baseUrl}/lesson/${idLesson}`, lesson)
+  updateLesson(lesson : ILesson) : Observable<ILesson[]>{
+    return this.httpClient.put<ILesson>(`${environment.baseUrl}/lessons/${lesson.id}`, lesson)
     .pipe(concatMap(()=> this.getLesson()));
   }
 
   deleteLesson(idLesson : number) : Observable<ILesson[]>{
-    return this.httpClient.delete(`${environment.baseUrl}/lesson/${idLesson}`)
+    return this.httpClient.delete(`${environment.baseUrl}/lessons/${idLesson}`)
     .pipe(() => this.getLesson());
   }
 }

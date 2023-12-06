@@ -39,14 +39,14 @@ export class StudentComponent {
     this.matDialog.open(StudentDialogComponent).afterClosed().subscribe({
       next:
         (dataStudent) => {
-          this.studentService.addStudent(dataStudent);
+          //this.studentService.addStudent(dataStudent);
           if (!!dataStudent) {
             this.studentService.addStudent(dataStudent).subscribe({
               next: (response) => {
                 this.studentList = response;
               }
             })
-            this.notifier.sucessNotification("Dado de alta", "Registro dado de alta correctamente", 'success');
+            this.notifier.successNotification("Dado de alta", "Registro dado de alta correctamente", 'success');
           }
         }
     }
@@ -65,7 +65,7 @@ export class StudentComponent {
               this.studentList = response;
             }
           })
-         this.notifier.sucessNotification("Editado","Registro editado correctamente",'success');
+         this.notifier.successNotification("Editado","Registro editado correctamente",'success');
         }
       }
     })

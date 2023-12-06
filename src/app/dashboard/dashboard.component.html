@@ -1,7 +1,7 @@
 <mat-toolbar color="primary">
-    <button mat-icon-button (click)="drawer.toggle()">
+    <!-- <button mat-icon-button (click)="drawer.toggle()">
       <mat-icon>menu</mat-icon>
-    </button>
+    </button> -->
     <span *ngIf="!student">UAEMex</span>
     <span *ngIf="student">Alumnos</span>
     <span class="example-spacer"></span>
@@ -10,13 +10,12 @@
     </button>
 </mat-toolbar>
   
-<mat-drawer-container class="example-container" autosize>
-    <mat-drawer #drawer mode="side">
-      <app-sidenav></app-sidenav>
-    </mat-drawer>
-    
-    <div>
-      <router-outlet></router-outlet>
-    </div>
+<mat-drawer-container class="example-container">
+  <mat-drawer mode="side" opened>
+    <app-sidenav></app-sidenav>
+  </mat-drawer>
+ 
+  <div>
+    <router-outlet></router-outlet>
+  </div>
 </mat-drawer-container>
-  

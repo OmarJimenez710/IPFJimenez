@@ -1,13 +1,12 @@
-<div class="dialog-container">
+<h1 mat-dialog-title class="student-dialog-title">{{titleForm}}</h1>
+
+<div mat-dialog-content>
     <form class="row">
         <div class="col-6">
             <mat-form-field class="w-100">
                 <mat-label>Cursos</mat-label>
                 <mat-select [formControl]="courseIdControl">
-                    <mat-option
-                        [value]="course.name"
-                        *ngFor="let course of courseOptions$ | async"
-                    >
+                    <mat-option [value]="course.name" *ngFor="let course of courseOptions$ | async">
                         {{course.name}}
                     </mat-option>
                 </mat-select>
@@ -17,19 +16,20 @@
             <mat-form-field class="w-100">
                 <mat-label>Estudiante</mat-label>
                 <mat-select [formControl]="courseIdControl">
-                    <mat-option
-                        [value]="student.id"
-                        *ngFor="let student of studentOptions$ | async"
-                    >
+                    <mat-option [value]="student.id" *ngFor="let student of studentOptions$ | async">
                         {{student.name}} {{student.lastname}}
                     </mat-option>
                 </mat-select>
             </mat-form-field>
         </div>
-    </form>
-</div>
 
-<div mat-dialog-actions>
-    <button  mat-button (click)="onSubmit()" type="button">Guardar</button>
-    <button mat-dialog-close mat-button type="button">Cancelar</button>
+        <div class="row text-center">
+            <div class="col-6">
+                <button mat-dialog-close mat-raised-button color="warn">Cancelar</button>
+            </div>
+            <div class="col-6">
+                <button (click)="onSubmit()" mat-raised-button color="primary">Guardar</button>
+            </div>
+        </div>
+    </form>
 </div>

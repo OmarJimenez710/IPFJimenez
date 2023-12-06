@@ -41,9 +41,13 @@
             </button>
         </div>
         <div class="col-6">
-            <button mat-raised-button color="primary">
+            <button *ngIf="save" mat-raised-button color="primary" (click)="saveData()">
                 <mat-icon>save</mat-icon>
                 Guardar
+            </button>
+            <button *ngIf="!save" mat-raised-button color="primary" (click)="saveData()">
+                <mat-icon>edit</mat-icon>
+                Editar
             </button>
         </div>
     </div>

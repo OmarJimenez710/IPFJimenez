@@ -17,5 +17,4 @@ export class EnrollmentTableComponent {
   constructor(private store: Store){
     this.enrollments$ = this.store.select(selectEnrollments);
   }
-
 }

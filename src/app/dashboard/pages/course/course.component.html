@@ -1,5 +1,5 @@
 <app-course-table
-    [dataSource]= "(course | async) || []"
+    [dataSource]= "(course$ | async) || []"
     (editCourse)="editCourse($event)"
     (deleteCourse)="deleteCourse($event)"
 >

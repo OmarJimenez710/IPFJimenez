@@ -8,6 +8,7 @@ import { Actions, ofType } from '@ngrx/effects';
 import { MatDialogRef } from '@angular/material/dialog';
 import { ICourse } from 'src/app/models/course.model';
 import { IStudent } from 'src/app/models/student.model';
+import { TITLE_LIST } from 'src/app/list/title.list';
 
 @Component({
   selector: 'app-enrollments-dialog',
@@ -17,6 +18,9 @@ import { IStudent } from 'src/app/models/student.model';
 export class EnrollmentsDialogComponent {
   userIdControl = new FormControl<number | null>(null);
   courseIdControl = new FormControl<number | null>(null);
+  TITLE_LIST = TITLE_LIST;
+
+  titleForm: string = '';
 
   enrollmentForm = new FormGroup({
     courseId: this.courseIdControl,
@@ -31,6 +35,7 @@ export class EnrollmentsDialogComponent {
       private actions$: Actions, 
       private matDialogRef: MatDialogRef<EnrollmentsDialogComponent>){
 
+    this.titleForm = this.TITLE_LIST.addEnrollment;
     this.store.dispatch(EnrollmentActions.loadEnrollmentsOptions());
 
     this.courseOptions$ = this.store.select(selectCourseOptions);

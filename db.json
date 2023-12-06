@@ -41,17 +41,6 @@
       "semester": "9no semestre"
     },
     {
-      "id": 2,
-      "name": "Maria",
-      "lastname": "Perez",
-      "age": 20,
-      "phone": 7228896471,
-      "email": "mperezf447@alumno.uaemex.com",
-      "civilStatus": "soltero",
-      "semester": "10mo semestre",
-      "rol": "STUDENT"
-    },
-    {
       "id": 3,
       "name": "Andrea",
       "lastname": "Tobon",
@@ -71,6 +60,36 @@
       "civilStatus": "soltero",
       "semester": "4to semestre",
       "id": 4
+    },
+    {
+      "id": 5,
+      "name": "Aldair",
+      "lastname": "Flores",
+      "age": "25",
+      "phone": "7222867514",
+      "email": "afloresj934@alumno.uaemex.mx",
+      "civilStatus": "soltero",
+      "semester": "9no semestre"
+    },
+    {
+      "id": 6,
+      "name": "Virginia",
+      "lastname": "Cardoso",
+      "age": "18",
+      "phone": "7228931078",
+      "email": "vcardosof547@alumno.uaemex.mx",
+      "civilStatus": "casada",
+      "semester": "10mo semestre"
+    },
+    {
+      "id": 7,
+      "name": "Citlali",
+      "lastname": "Garcia",
+      "age": "26",
+      "phone": "7228793148",
+      "email": "cgarciaf147@alumno.uaemex.mx",
+      "civilStatus": "soltera",
+      "semester": "5to semestre"
     }
   ],
   "lessons": [
@@ -78,51 +97,52 @@
       "id": 1,
       "name": "Algebra Superior",
       "teacher": "Luis Mendez",
-      "hourToStart": "9:00 am",
-      "hourToFinish": "11:00 am",
+      "hourToStart": "9:00",
+      "hourToFinish": "11:00",
       "numberStudent": 25
     },
     {
       "id": 2,
       "name": "Calculo integral",
       "teacher": "Virginia Flores",
-      "hourToStart": "12:00 pm",
-      "hourToFinish": "14:00 pm",
+      "hourToStart": "12:00",
+      "hourToFinish": "14:00",
       "numberStudent": 10
     },
     {
       "id": 3,
       "name": "Programación avanzada",
       "teacher": "Roberto Palazuelos",
-      "hourToStart": "7:00 am",
-      "hourToFinish": "10:00 am",
+      "hourToStart": "7:00",
+      "hourToFinish": "10:00",
       "numberStudent": 40
     },
     {
       "id": 4,
       "name": "Metricas de software",
       "teacher": "Aldair Garcia",
-      "hourToStart": "11:00 am",
-      "hourToFinish": "13:00 am",
+      "hourToStart": "11:00",
+      "hourToFinish": "13:00",
       "numberStudent": 7
     },
     {
       "id": 5,
       "name": "Programación Orientada a Objetos",
       "teacher": "Francisco Chavez",
-      "hourToStart": "15:00 pm",
-      "hourToFinish": "17:00 pm",
+      "hourToStart": "15:00",
+      "hourToFinish": "17:00",
       "numberStudent": 34
+    },
+    {
+      "id": 6,
+      "name": "Metodología de la investigacón ",
+      "teacher": "Fernando Caballero",
+      "hourToStart": "11:00",
+      "hourToFinish": "14:00",
+      "numberStudent": 3
     }
   ],
   "courses": [
-    {
-      "id": 1,
-      "name": "Curso de Java Básico",
-      "description": "Curso de Java para principiantes en donde aprenderas habilidades para tu vida futura como programador",
-      "duration": "5:50:10",
-      "starts": 3
-    },
     {
       "id": 2,
       "name": "Curso de Java Intermedio",
@@ -136,18 +156,32 @@
       "description": "Curso de Java donde realizaras grandes proyectos para empresas como BBVA",
       "duration": "5:50:10",
       "starts": 4
+    },
+    {
+      "name": "Curso Angular para principiantes",
+      "description": "Curso de angular 16 básico para principiantes",
+      "duration": "10:14:17",
+      "starts": "5",
+      "id": 4
+    },
+    {
+      "name": "Principios de SCRUM",
+      "description": "Aprende una de las mejores metodologías en 5 dias",
+      "duration": "5:09:14",
+      "starts": "2",
+      "id": 5
     }
   ],
   "enrollments": [
     {
-      "id": 1,
-      "courseId": 1,
-      "userId": 1
-    },
-    {
       "id": 3,
       "courseId": 3,
-      "userId": 1
+      "studentId": 1
+    },
+    {
+      "id": 2,
+      "courseId": 4,
+      "studentId": 2
     }
   ]
 }

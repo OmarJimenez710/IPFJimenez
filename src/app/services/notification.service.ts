@@ -25,7 +25,7 @@ export class NotificationService {
     });
   }
 
-  sucessNotification(title:string, message:string, type: string) : void {
+  successNotification(title:string, message:string, type: string) : void {
     this.notifier$.next({
       type,
       title,

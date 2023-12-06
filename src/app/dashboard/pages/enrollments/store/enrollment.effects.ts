@@ -11,7 +11,6 @@ import { IStudent } from 'src/app/models/student.model';
 
 @Injectable()
 export class EnrollmentEffects {
-
   loadEnrollments$ = createEffect(() => {
     return this.actions$.pipe(
 
@@ -61,15 +60,14 @@ export class EnrollmentEffects {
     return this.httpClient.post<any>(`${environment.baseUrl}/enrollment`, payload);
   }
 
-  getEnrollmentOption() : Observable<{
-    courses: ICourse[],
-    students: IStudent[]
-  }>{
+  getEnrollmentOption() : Observable<{courses: ICourse[],students: IStudent[]}>{
     return forkJoin([
       this.httpClient.get<ICourse[]>(`${environment.baseUrl}/courses`),
-      this.httpClient.get<IStudent[]>(`${environment.baseUrl}/users`)
+      this.httpClient.get<IStudent[]>(`${environment.baseUrl}/students`)
     ]).pipe(
       map((resp)=>{
+        console.log('-->' + resp);
+
         return {
           courses: resp[0],
           students: resp[1]
@@ -79,6 +77,6 @@ export class EnrollmentEffects {
   }
 
   getEnrollments(): Observable<any[]>{
-    return this.httpClient.get<any[]>(`${environment.baseUrl}/enrollments?_expand=course&&_expand=user`);
+    return this.httpClient.get<any[]>(`${environment.baseUrl}/enrollments?_expand=course&&_expand=student`);
   }
 }

@@ -5,4 +5,6 @@ export enum TITLE_LIST {
     editLesson = 'Editar Clase',
     addCourse = 'Agregar Curso',
     editCourse = 'Editar Curso',
+    addEnrollment = 'Agregar Inscripción',
+    editEnrollment = 'Editar Inscripción'
 }

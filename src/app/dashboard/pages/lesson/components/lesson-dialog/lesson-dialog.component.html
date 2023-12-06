@@ -20,13 +20,13 @@
             <div class="col-3">
                 <mat-form-field class="w-100">
                     <mat-label>Hora inicio</mat-label>
-                    <input matInput formControlName="hourToStart">
+                    <input matInput type="time" formControlName="hourToStart">
                 </mat-form-field>
             </div>
             <div class="col-3">
                 <mat-form-field class="w-100">
                     <mat-label>Hora fin</mat-label>
-                    <input matInput formControlName="hourToFinish">
+                    <input matInput type="time" formControlName="hourToFinish">
                 </mat-form-field>
             </div>
         </div>
@@ -34,24 +34,24 @@
             <div class="col-3">
                 <mat-form-field>
                     <mat-label>Total alumnos</mat-label>
-                    <input matInput formControlName="numberStudent">
+                    <input matInput type="number" formControlName="numberStudent">
                 </mat-form-field>
             </div>
         </div>
     </form>
     <div class="row">
         <div class="col-6 text-center">
-            <button matDialogClose mat-raised-button color="warn">
+            <button mat-dialog-close mat-raised-button color="warn">
                 <mat-icon>close</mat-icon>
                 Cerrar
             </button>
         </div>
         <div class="col-6 text-center">
-            <button mat-raised-button color="primary" *ngIf="save">
+            <button mat-raised-button (click)="sendData()" color="primary" *ngIf="save">
                 <mat-icon>save</mat-icon>
                 Guardar
             </button>
-            <button mat-raised-button color="primary" *ngIf="!save">
+            <button mat-raised-button (click)="sendData()" color="primary" *ngIf="!save">
                 <mat-icon>edit_document</mat-icon>
                 Editar
             </button>
